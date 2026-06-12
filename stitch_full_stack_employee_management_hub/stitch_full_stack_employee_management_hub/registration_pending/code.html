@@ -1,0 +1,208 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Registration Pending Approval - WorkSync Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#00236f",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed": "#40000c",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed": "#dce1ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-tertiary-fixed-variant": "#920028",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#90a8ff",
+                        "outline": "#757682",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary-fixed": "#00164e",
+                        "outline-variant": "#c5c5d3",
+                        "inverse-surface": "#213145",
+                        "primary-container": "#1e3a8a",
+                        "on-surface": "#0b1c30",
+                        "tertiary": "#5c0016",
+                        "tertiary-fixed": "#ffdada",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-container": "#ff8991",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed-dim": "#ffb3b6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006c49",
+                        "on-surface-variant": "#444651",
+                        "surface-tint": "#4059aa",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#6ffbbe",
+                        "background": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-background": "#0b1c30",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary-fixed-variant": "#264191",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#850024",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "sidebar-width": "260px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "code-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "code-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .tonal-layer {
+            background: linear-gradient(135deg, #f8f9ff 0%, #eff4ff 100%);
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col tonal-layer">
+<!-- TopAppBar Mockup (Transactional - No Nav) -->
+<header class="flex justify-between items-center h-16 px-container-margin w-full bg-surface-container-lowest/80 backdrop-blur-md sticky top-0 z-50">
+<div class="font-headline-md text-headline-md font-extrabold text-primary">
+            WorkSync Pro
+        </div>
+<div class="flex items-center gap-sm">
+<span class="text-label-md font-label-md text-on-surface-variant uppercase">Support</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">help_outline</span>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-container-margin py-xl">
+<div class="max-w-[560px] w-full">
+<!-- Main Success Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-xl shadow-sm text-center relative overflow-hidden" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+<!-- Subtle Top Accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<!-- Success Illustration Area -->
+<div class="mb-lg flex justify-center">
+<div class="relative">
+<div class="w-24 h-24 bg-secondary/10 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[48px] text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="absolute -top-2 -right-2 bg-primary-container text-white p-1 rounded-full border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Text Content -->
+<h1 class="font-headline-md text-headline-md text-on-surface mb-md">Submission Successful</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl">
+                    Your account request has been submitted for administrator approval. Our team typically reviews new registrations within 24 business hours.
+                </p>
+<!-- Information Box -->
+<div class="bg-surface-container-low rounded-xl p-md mb-xl border border-outline-variant/30 flex items-start gap-md text-left">
+<span class="material-symbols-outlined text-primary mt-1">mail</span>
+<div>
+<p class="font-title-md text-title-md text-on-surface">What happens next?</p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            We have sent a confirmation of receipt to your provided email address. You will receive a separate notification once your profile is active.
+                        </p>
+</div>
+</div>
+<!-- Action Button -->
+<a class="inline-flex items-center justify-center gap-sm text-on-primary font-title-md text-title-md py-md px-xl rounded-lg transition-all duration-200 active:scale-95 w-full shadow-md hover:bg-[#1e3a8a]" href="#" style="background-color: rgb(30, 64, 175); color: rgb(255, 255, 255);">
+                    Return to Login
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Footer Meta -->
+<div class="mt-xl text-center space-y-md">
+<div class="flex justify-center items-center gap-xl grayscale opacity-50">
+<img alt="Brand Logo" class="h-6" data-alt="A clean, minimalist monochrome corporate logo for a global enterprise. The design is sleek, modern, and professional, rendered in a deep indigo blue on a light background. The logo conveys stability and authority, perfectly fitting a high-utility enterprise software environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_-HQA1ee8t4rDxJb7bBIyyvwxFDsTNVfhEAyt0V2387KLGxcnAI0NIptrUAfE5IbgQ1rKfwalAKsfbImXMfWSJvxEaMX2ufJeofhsrMk54vqW3p5fZG5KLEivCVvTOFQt60mfygKcb4EsLN5rbwFuNShjEq_3BJApIf3B7y6fecjr2DwzaoYEXd5gm5gdAJyreFb_U1F7wfj9uP83snaATCeExov7JKxJjVH8ZpfxTDOwLIcBqcn6nn5zAzE_s40W2DFQjXLfH1W3">
+</div>
+<p class="font-label-md text-label-md text-outline uppercase tracking-widest">
+                    © 2024 WorkSync Global Solutions. All rights reserved.
+                </p>
+</div>
+</div>
+</main>
+<!-- Side Decoration (Ambient Visuals) -->
+<div class="fixed bottom-0 right-0 p-xl pointer-events-none opacity-20">
+<span class="material-symbols-outlined text-[240px] text-primary select-none" style="font-variation-settings: 'wght' 100;">corporate_fare</span>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Subtle entrance animation for the card
+            const card = document.querySelector('.bg-surface-container-lowest');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+
+            // Add hover effect to the info box
+            const infoBox = document.querySelector('.bg-surface-container-low');
+            infoBox.addEventListener('mouseenter', () => {
+                infoBox.classList.add('border-primary/50');
+            });
+            infoBox.addEventListener('mouseleave', () => {
+                infoBox.classList.remove('border-primary/50');
+            });
+        });
+    </script>
+
+
+</body></html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Employee Profile - WorkSync Pro</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb3b6",
+                        "outline-variant": "#c5c5d3",
+                        "on-surface": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#90a8ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#444651",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "background": "#f8f9ff",
+                        "secondary": "#006c49",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-container": "#00714d",
+                        "tertiary": "#5c0016",
+                        "tertiary-container": "#850024",
+                        "on-tertiary-container": "#ff8991",
+                        "on-tertiary-fixed": "#40000c",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "primary": "#00236f",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#dce1ff",
+                        "primary-container": "#1e3a8a",
+                        "inverse-surface": "#213145",
+                        "inverse-primary": "#b6c4ff",
+                        "tertiary-fixed": "#ffdada",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed": "#002113",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#920028",
+                        "on-primary-fixed-variant": "#264191",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "outline": "#757682",
+                        "surface-tint": "#4059aa",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00164e",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "container-margin": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "sidebar-width": "260px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "title-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "code-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "code-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E2E8F0;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Navigation Drawer (Shared Component) -->
+<aside class="w-sidebar-width h-full fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col py-lg z-40 hidden md:flex" id="nav-drawer">
+<div class="px-md mb-xl">
+<span class="font-title-lg text-title-lg font-bold text-primary">WorkSync Pro</span>
+</div>
+<div class="flex flex-col gap-xs flex-grow">
+<!-- Navigation Items -->
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Admin Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-primary border-l-4 border-primary bg-primary-container/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-md text-body-md">Employee Directory</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-body-md text-body-md">Attendance</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-container transition-colors cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">event_busy</span>
+<span class="font-body-md text-body-md">Leave Management</span>
+</a>
+</div>
+<!-- Sidebar Profile Footer -->
+<div class="mt-auto px-md pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-md">
+<img alt="User Profile Picture" class="w-10 h-10 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCepsWEkcvihWHEd40DmWKq6IznnD5XcQxW_7yhlnJnEIFgiJV_ynnTV_QNCNZbsmY1fXDn1UOCDikoZzz0nLqzpIJgM4OpOeoeB1FG-i42HKdMEjO44d-rVv1lRsVesTNQvFG27-z_KE-cV14n111SeT7J0Kx4cUaXTG8qkNUqEy_z9iQC4wKkdD_KHL95WzNO3c7gD1vFQMW8g6APJX3-KNu3PpiG85177DE4np-X397D1B5IXeJmMYoeZPQgovY5GeRUJ9ytBxpS">
+<div class="overflow-hidden">
+<p class="font-title-md text-title-md text-primary truncate">Alex Rivers</p>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">HR Administrator</p>
+</div>
+</div>
+<div class="mt-md">
+<span class="text-[10px] font-bold tracking-widest text-primary bg-primary-fixed px-sm py-1 rounded-full">PREMIUM ACCESS</span>
+</div>
+</div>
+</aside>
+<!-- Top App Bar (Shared Component) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-container-margin w-full md:pl-[calc(260px+24px)]">
+<div class="flex items-center gap-md">
+<button class="md:hidden hover:bg-surface-container transition-all duration-200 p-sm rounded-full">
+<span class="material-symbols-outlined text-primary" style="color: rgb(30, 64, 175);">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Employee Profile</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:bg-surface-container transition-all duration-200 p-sm rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full cursor-pointer hover:ring-2 hover:ring-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiVrN8DbbjyDEpvibn7j5DNngy1qT13nN191zft-sjUy43Qty7NKbeVYUewpMedOxRwNhA07kiNNa3K1bcJthCxZthLVQ8Weyjd9-b_NL3yf8nKTkGOvpbTyfD6v-u9lcnQKEeb0rAkPQYNSx5YzFDeKgjoRT8N5OWhJlq_Ou-9YeR__r_8WtRbw5mdRk2JB950NWgh_hyHm26NCksaK6O8QQW0n5kuTOvvuQJ3h9plW5zDe4U9nsh3-TWMYSiS3sbjGIV68BNH50X">
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="md:ml-sidebar-width min-h-screen p-container-margin pt-lg bg-background pb-xl">
+<div class="max-w-6xl mx-auto space-y-lg">
+<!-- Hero Header Section -->
+<section class="relative overflow-hidden glass-card rounded-xl shadow-sm">
+<!-- Background Pattern / Atmospheric Glow -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary-container/20 to-transparent pointer-events-none"></div>
+<div class="p-xl flex flex-col md:flex-row gap-xl items-center md:items-start relative z-10">
+<div class="relative">
+<img alt="Marcus Chen Profile" class="w-32 h-32 md:w-48 md:h-48 rounded-xl object-cover border-4 border-surface shadow-md" data-alt="A professional headshot of a middle-aged man with short dark hair and a warm smile. He is wearing a tailored charcoal suit and a crisp white shirt, set against a blurred modern office background with soft bokeh lighting. The overall lighting is professional and high-key, conveying a sense of corporate leadership and approachable authority in a modern enterprise environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh_qtIUTdHlr3p9zVQladx8GbumM8MG_8lXm2hIDvtvTSs4v3DWupNUoATLsM20OkGiwqnwoGcqIGsKSQ52O0ufAHFkygzKvVFkeuDyB3sGWiZQXabTCpGCaHbrbyCGTpOZVyxnkHw3S2NegnKu-eBVivGVOiwD2eF0hol7WlvTzfL16jRpWyUSrna53VjhQCc0uv_TflTRvmyJTzT_NgGFYWdrNw7N0WSz73Ol0fWahDdPU0m2OP5CdQpuyYPysb8y87QkY-ATWnf">
+<div class="absolute -bottom-2 -right-2 bg-secondary p-xs rounded-lg shadow-lg border-2 border-surface">
+<span class="material-symbols-outlined text-white text-md">verified</span>
+</div>
+<button class="absolute top-2 right-2 bg-surface/90 p-xs rounded-full shadow-md hover:bg-primary hover:text-white transition-all group border border-outline-variant/30">
+    <span class="material-symbols-outlined text-sm">photo_camera</span>
+</button></div>
+<div class="flex-grow text-center md:text-left">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Marcus Chen</h2><span class="inline-flex items-center px-sm py-xs rounded-full bg-primary-fixed text-on-primary-fixed text-[10px] font-bold tracking-wider uppercase mb-sm">
+    <span class="material-symbols-outlined text-[12px] mr-xs">admin_panel_settings</span>
+    Admin View
+</span>
+<p class="font-title-md text-title-md text-primary bg-primary-fixed/30 inline-block px-sm py-1 rounded-lg">HR Administrator</p>
+</div>
+<div class="flex gap-sm justify-center">
+<button class="px-md py-sm bg-primary text-on-primary rounded-lg font-label-md flex items-center gap-xs hover:opacity-90 transition-all" style="background-color: rgb(30, 64, 175); color: white;" onmouseover="this.style.backgroundColor='#1e3a8a'" onmouseout="this.style.backgroundColor='#1e40af'">
+<span class="material-symbols-outlined text-sm">edit</span>
+                                    Edit Profile
+                                </button>
+
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md mt-lg border-t border-outline-variant/30 pt-lg">
+<div class="flex items-center gap-md">
+<div class="bg-surface-container p-sm rounded-lg">
+<span class="material-symbols-outlined text-primary" style="color: rgb(30, 64, 175);">alternate_email</span>
+</div>
+<div class="text-left">
+<p class="font-label-md text-label-md text-on-surface-variant">EMAIL</p>
+<p class="font-body-md text-body-md text-on-surface">marcus.chen@worksync.pro</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="bg-surface-container p-sm rounded-lg">
+<span class="material-symbols-outlined text-primary" style="color: rgb(30, 64, 175);">call</span>
+</div>
+<div class="text-left">
+<p class="font-label-md text-label-md text-on-surface-variant">PHONE</p>
+<p class="font-body-md text-body-md text-on-surface">+1 (555) 012-3456</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="bg-surface-container p-sm rounded-lg">
+<span class="material-symbols-outlined text-primary" style="color: rgb(30, 64, 175);">location_on</span>
+</div>
+<div class="text-left">
+<p class="font-label-md text-label-md text-on-surface-variant">OFFICE</p>
+<p class="font-body-md text-body-md text-on-surface">Corporate HQ, Austin</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Personal Information -->
+<div class="md:col-span-4 glass-card rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined" style="color: rgb(30, 64, 175);">person</span>
+                            Personal Information
+                        </h3>
+</div>
+<div class="space-y-md">
+<div class="pb-sm border-b border-outline-variant/20">
+<p class="font-label-md text-label-md text-on-surface-variant">Full Name</p>
+<p class="font-body-lg text-body-lg text-on-surface">Marcus Aurelius Chen</p>
+</div>
+<div class="pb-sm border-b border-outline-variant/20">
+<p class="font-label-md text-label-md text-on-surface-variant">Date of Birth</p>
+<p class="font-body-lg text-body-lg text-on-surface">May 14, 1985</p>
+</div>
+<div class="pb-sm border-b border-outline-variant/20">
+<p class="font-label-md text-label-md text-on-surface-variant">Gender</p>
+<p class="font-body-lg text-body-lg text-on-surface">Male</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Nationality</p>
+<p class="font-body-lg text-body-lg text-on-surface">United States</p>
+</div>
+</div>
+</div>
+<!-- Employment Details -->
+<div class="md:col-span-8 glass-card rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined" style="color: rgb(30, 64, 175);">badge</span>
+                            Employment Details
+                        </h3>
+<span class="px-sm py-xs bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-lg uppercase tracking-wider">Active</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+<div class="space-y-md">
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant/10">
+<p class="font-label-md text-label-md text-on-surface-variant">Designation</p>
+<p class="font-title-lg text-title-lg text-primary">Senior HR Administrator</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Human Resources Department</p>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Salary (Annual)</p>
+<p class="font-headline-md text-headline-md text-on-surface">$115,000.00</p>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-on-surface-variant">Joining Date</p>
+<p class="font-title-md text-title-md text-on-surface">Jan 12, 2018</p>
+</div>
+</div>
+</div>
+<div class="space-y-md">
+<div class="bg-primary/5 p-md rounded-lg border border-primary/10">
+<p class="font-label-md text-label-md text-on-surface-variant">Work Arrangement</p>
+<div class="flex items-center gap-sm mt-sm">
+<span class="material-symbols-outlined text-secondary">home_work</span>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Hybrid - 3 Days Remote</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="p-sm">
+<p class="font-label-md text-label-md text-on-surface-variant">Employee ID</p>
+<p class="font-code-md text-code-md bg-surface-variant px-sm py-1 rounded inline-block mt-xs">WS-2018044</p>
+</div>
+<div class="p-sm">
+<p class="font-label-md text-label-md text-on-surface-variant">Reports To</p>
+<p class="font-body-md text-body-md text-primary underline cursor-pointer mt-xs">Sarah Jenkins (CHRO)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Account Settings & Preferences -->
+<div class="md:col-span-12 glass-card rounded-xl p-lg">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined" style="color: rgb(30, 64, 175);">settings</span>
+                        Account Settings &amp; Security
+                    </h3>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Security -->
+<div class="space-y-md">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/20 pb-xs">Security</h4>
+<button class="w-full flex items-center justify-between p-md bg-surface-container-low hover:bg-surface-container transition-all rounded-lg group">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">password</span>
+<span class="font-body-md text-body-md">Change Password</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<div class="flex items-center justify-between p-md">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">security</span>
+<div>
+<p class="font-body-md text-body-md">Two-Factor Auth</p>
+<p class="text-[11px] text-on-surface-variant">Secured via SMS</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Notification Preferences -->
+<div class="space-y-md">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/20 pb-xs">Notifications</h4>
+<div class="space-y-sm">
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="font-body-md text-body-md">Email Notifications</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="font-body-md text-body-md">Push Notifications</span>
+</label>
+<label class="flex items-center gap-md p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="font-body-md text-body-md">SMS Alerts (Critical Only)</span>
+</label>
+</div>
+</div>
+<!-- Login Activity (Brief) -->
+<div class="space-y-md">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest border-b border-outline-variant/20 pb-xs">Login Activity</h4>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-on-surface-variant mt-1">laptop_mac</span>
+<div>
+<p class="font-body-md text-body-md">MacBook Pro - Austin, TX</p>
+<p class="text-[11px] text-secondary font-bold">CURRENT SESSION</p>
+</div>
+</div>
+<div class="flex items-start gap-md opacity-60">
+<span class="material-symbols-outlined text-on-surface-variant mt-1">smartphone</span>
+<div>
+<p class="font-body-md text-body-md">iPhone 14 - San Francisco, CA</p>
+<p class="text-[11px] text-on-surface-variant">LAST ACTIVE: 2 HOURS AGO</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for sidebar toggle (mobile)
+        const menuBtn = document.querySelector('header button');
+        const drawer = document.getElementById('nav-drawer');
+        
+        menuBtn.addEventListener('click', () => {
+            drawer.classList.toggle('hidden');
+            drawer.classList.toggle('flex');
+            drawer.classList.toggle('fixed');
+            drawer.classList.toggle('inset-0');
+            drawer.classList.toggle('w-full');
+        });
+
+        // Close drawer if clicking outside on mobile
+        drawer.addEventListener('click', (e) => {
+            if (e.target === drawer && window.innerWidth < 768) {
+                drawer.classList.add('hidden');
+                drawer.classList.remove('flex', 'fixed', 'inset-0', 'w-full');
+            }
+        });
+    </script>
+
+
+
+
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex justify-around items-center py-sm z-50">
+    <a href="#" class="flex flex-col items-center gap-xs text-primary">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="text-[10px] font-medium">Home</span>
+    </a>
+    <a href="#" class="flex flex-col items-center gap-xs text-on-surface-variant">
+        <span class="material-symbols-outlined">groups</span>
+        <span class="text-[10px] font-medium">Directory</span>
+    </a>
+    <a href="#" class="flex flex-col items-center gap-xs text-on-surface-variant">
+        <span class="material-symbols-outlined">person</span>
+        <span class="text-[10px] font-medium">Profile</span>
+    </a>
+    <a href="#" class="flex flex-col items-center gap-xs text-on-surface-variant">
+        <span class="material-symbols-outlined">settings</span>
+        <span class="text-[10px] font-medium">Settings</span>
+    </a>
+</nav>
+
+</body></html>

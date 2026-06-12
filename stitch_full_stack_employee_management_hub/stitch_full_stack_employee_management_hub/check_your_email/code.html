@@ -1,0 +1,194 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Check Your Email - WorkSync Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed": "#6ffbbe",
+                        "tertiary-container": "#850024",
+                        "primary-fixed": "#dce1ff",
+                        "primary": "#00236f",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#920028",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed-variant": "#264191",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#4059aa",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary": "#006c49",
+                        "primary-container": "#1e3a8a",
+                        "error-container": "#ffdad6",
+                        "surface": "#f8f9ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface-variant": "#444651",
+                        "surface-container": "#e5eeff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#5c0016",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary-container": "#90a8ff",
+                        "outline-variant": "#c5c5d3",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed": "#00164e",
+                        "secondary-fixed-dim": "#4edea3",
+                        "background": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "outline": "#757682",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-tertiary-container": "#ff8991",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#00714d",
+                        "tertiary-fixed-dim": "#ffb3b6",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed": "#ffdada",
+                        "on-tertiary-fixed": "#40000c",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "sidebar-width": "260px",
+                        "base": "4px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "code-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .dotted-grid {
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col items-center justify-center p-md dotted-grid">
+<!-- Brand Header -->
+<header class="fixed top-0 left-0 w-full flex justify-center items-center h-20 pointer-events-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">EnterpriseSync</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[480px] z-10">
+<div class="glass-effect rounded-xl border border-outline-variant shadow-sm p-xl flex flex-col items-center text-center">
+<!-- Success Illustration Area -->
+<div class="w-24 h-24 bg-surface-container-low rounded-full flex items-center justify-center mb-xl relative">
+<div class="absolute inset-0 bg-primary/5 rounded-full animate-ping scale-110 opacity-20"></div>
+<span class="material-symbols-outlined text-primary text-[48px]" style="font-variation-settings: 'FILL' 0;">mark_email_read</span>
+</div>
+<!-- Typography & Content -->
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-md">Check your email</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-[340px]">
+                We've sent a password reset link to your email address. Please check your inbox and follow the instructions to reset your password.
+            </p>
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary font-title-md text-title-md py-4 rounded-lg hover:opacity-90 active:scale-95 transition-all mb-lg shadow-md flex items-center justify-center gap-2" style="background-color: rgb(30, 64, 175); color: rgb(255, 255, 255);" onmouseover="this.style.backgroundColor='#1e3a8a'" onmouseout="this.style.backgroundColor='#1e40af'">
+                Open Email App
+                <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+</button>
+<!-- Secondary Action / Timer -->
+<div class="flex flex-col items-center gap-sm">
+<p class="font-label-md text-label-md text-on-surface-variant">
+                    Didn't receive the email?
+                </p>
+<button class="font-title-md text-title-md text-primary hover:underline transition-all" id="resend-btn">Resend link</button>
+</div>
+<!-- Divider -->
+<div class="w-full h-[1px] bg-outline-variant my-xl"></div>
+<!-- Footer Navigation -->
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="font-title-md text-title-md">Back to Login</span>
+</a>
+</div>
+<!-- Security & Trust Indicators -->
+<div class="mt-xl flex justify-center items-center gap-lg opacity-60">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">SSO Protected</span>
+</div>
+<div class="w-1 h-1 bg-outline-variant rounded-full"></div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">encrypted</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">256-bit Encryption</span>
+</div>
+</div>
+</main>
+<!-- Visual Background Element -->
+<div class="fixed bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-surface-container-low to-transparent -z-10 pointer-events-none"></div>
+<script>
+        // Simple Countdown Timer for the Resend button
+        let timeLeft = 60;
+        const timerSpan = document.getElementById('timer');
+        const resendBtn = document.getElementById('resend-btn');
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                resendBtn.innerHTML = 'Resend link';
+                resendBtn.classList.remove('cursor-not-allowed', 'opacity-70');
+            } else {
+                timerSpan.textContent = timeLeft;
+            }
+        }, 1000);
+
+        // Interaction logic
+        resendBtn.addEventListener('click', (e) => {
+            if (timeLeft > 0) {
+                e.preventDefault();
+                return;
+            }
+            // Trigger resend logic here
+            alert("Resending reset link...");
+        });
+    </script>
+
+
+</body></html>

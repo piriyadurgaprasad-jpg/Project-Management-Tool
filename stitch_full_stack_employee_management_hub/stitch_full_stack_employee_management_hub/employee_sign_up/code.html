@@ -1,0 +1,365 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Employee Registration | WorkSync Pro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#00236f",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed": "#40000c",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed": "#dce1ff",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-tertiary-fixed-variant": "#920028",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#90a8ff",
+                        "outline": "#757682",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary-fixed": "#00164e",
+                        "outline-variant": "#c5c5d3",
+                        "inverse-surface": "#213145",
+                        "primary-container": "#1e3a8a",
+                        "on-surface": "#0b1c30",
+                        "tertiary": "#5c0016",
+                        "tertiary-fixed": "#ffdada",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-container": "#ff8991",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed-dim": "#ffb3b6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#006c49",
+                        "on-surface-variant": "#444651",
+                        "surface-tint": "#4059aa",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#6ffbbe",
+                        "background": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-background": "#0b1c30",
+                        "on-secondary-container": "#00714d",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "on-primary-fixed-variant": "#264191",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#850024",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "sidebar-width": "260px",
+                        "xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "code-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "code-md": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- Header Suppression: Landing/Onboarding context implies no global nav shell -->
+<header class="flex justify-between items-center h-16 px-container-margin w-full bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-size: 32px;">sync_alt</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">WorkSync Pro</span>
+</div>
+<div class="hidden md:flex items-center gap-md">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase">Enterprise Efficiency</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row">
+<!-- Visual/Brand Side Panel -->
+<section class="hidden lg:flex w-5/12 bg-primary items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-fixed to-transparent opacity-30"></div>
+</div>
+<div class="z-10 p-xl max-w-lg">
+<h1 class="font-display-lg text-display-lg text-primary-fixed mb-md">Empower Your Career.</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim leading-relaxed">
+                    Join the digital ecosystem where modern workforce management meets effortless productivity. Secure your spot in the future of work today.
+                </p>
+<div class="mt-xl grid grid-cols-2 gap-md">
+<div class="p-md bg-white/5 border border-white/10 rounded-xl">
+<span class="material-symbols-outlined text-primary-fixed mb-sm">verified_user</span>
+<p class="font-title-md text-title-md text-white">Secure Access</p>
+<p class="font-label-md text-label-md text-primary-fixed-dim">Single-Sign On ready protocols for corporate safety.</p>
+</div>
+<div class="p-md bg-white/5 border border-white/10 rounded-xl">
+<span class="material-symbols-outlined text-primary-fixed mb-sm">speed</span>
+<p class="font-title-md text-title-md text-white">Instant Sync</p>
+<p class="font-label-md text-label-md text-primary-fixed-dim">Real-time attendance and payroll visibility.</p>
+</div>
+</div>
+</div>
+<!-- Background Image -->
+<div class="absolute bottom-0 right-0 w-full h-1/2 opacity-40">
+<img alt="Corporate Office" class="w-full h-full object-cover grayscale" data-alt="A wide-angle, cinematic photograph of a contemporary corporate office atrium with high ceilings and floor-to-ceiling glass windows. The lighting is bright and airy, reflecting a clean light-mode aesthetic with soft blue and deep indigo shadows. Employees are subtly visible in the background, conveying a professional yet dynamic and efficient workplace environment. The architectural lines are sharp and modern, echoing a sense of precision and corporate authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzXm2J4qby2marCvtgtxs4yPmHpTWVzcsZBwCFNzohbovCaO2P68mTe8SmY54yugPKfVAgViAUklVoytVtwyEDlmiMH8Iaw4d-o7RqTqbHzPY6wCszqWGUFadNPgI5AWDpR7fTw1Inz53pEzh1Xh1iGiZrJrgSwCbSbeygUCpmUoTsjZdzTJlpzdu6w6pgXkn2BTDSM83EyoHV7CFDKwcBm3_td9t-jVrd_tEvnsgcx6XnDnLlWeD212c3q2icodg1cwUXEbmJ-P01">
+</div>
+</section>
+<!-- Registration Form Side -->
+<section class="flex-grow flex items-center justify-center p-md md:p-xl bg-surface">
+<div class="w-full max-w-md">
+<div class="mb-xl text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Employee Registration</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Complete the form below to initialize your corporate account.</p>
+</div>
+<form class="space-y-md" id="signupForm">
+<!-- Full Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase px-base" for="full_name">Full Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full pl-[48px] pr-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-on-surface" id="full_name" placeholder="John Doe" type="text">
+</div>
+</div>
+<!-- Corporate Email -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase px-base" for="email">Corporate Email</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full pl-[48px] pr-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-on-surface" id="email" placeholder="j.doe@worksyncpro.com" type="email">
+</div>
+</div>
+<!-- Row: Department & Designation -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase px-base" for="department">Department</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">corporate_fare</span>
+<select class="w-full pl-[48px] pr-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-on-surface appearance-none" id="department">
+<option disabled="" selected="" value="">Select Dept</option>
+<option value="Human Resources">Human Resources</option>
+<option value="Engineering">Engineering</option>
+<option value="Marketing">Marketing</option>
+<option value="Finance">Finance</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase px-base" for="designation">Designation</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">badge</span>
+<input class="w-full pl-[48px] pr-md py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-on-surface" id="designation" placeholder="Senior Analyst" type="text">
+</div>
+</div>
+</div>
+<!-- Password -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase px-base" for="password">Password</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full pl-[48px] pr-[48px] py-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all bg-white text-on-surface" id="password" placeholder="••••••••" type="password">
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined" id="passVisibilityIcon">visibility</span>
+</button>
+</div>
+<p class="text-[11px] text-outline px-base mt-xs">Must be at least 8 characters with a mix of letters and numbers.</p>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-sm py-sm">
+<input class="mt-1 w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="terms" type="checkbox">
+<label class="font-body-md text-body-md text-on-surface-variant" for="terms">
+                            I agree to the <a class="text-primary font-bold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-bold hover:underline" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary text-white py-md rounded-lg font-title-md text-title-md hover:bg-primary-container active:scale-[0.98] transition-all shadow-sm flex items-center justify-center gap-sm mt-md" type="submit" style="background-color: rgb(30, 64, 175);">
+                        Sign Up
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Footer Link -->
+<div class="text-center mt-xl">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Already have an account? 
+                            <a class="text-primary font-bold hover:underline ml-xs" href="#">Sign In</a>
+</p>
+<div class="mt-sm"><a href="#" class="text-primary font-label-md hover:underline flex items-center justify-center gap-xs"><span class="material-symbols-outlined text-[18px]">arrow_back</span>Back to Login</a></div></div>
+</form>
+<!-- Micro-interaction / Help text -->
+<div class="mt-xl p-md bg-surface-container-low rounded-xl border border-outline-variant/30 flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant italic">
+                        Facing issues? Contact your HR Admin at <span class="font-bold">support@worksyncpro.com</span>
+</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="h-12 bg-surface flex items-center justify-center px-container-margin border-t border-outline-variant/30">
+<p class="font-label-md text-label-md text-outline">© 2024 WorkSync Pro. All rights reserved.</p>
+</footer>
+<script>
+        // Simple password visibility toggle
+        document.querySelector('button[type="button"]').addEventListener('click', function() {
+            const pwdInput = document.getElementById('password');
+            const icon = this.querySelector('.material-symbols-outlined');
+            if (pwdInput.type === 'password') {
+                pwdInput.type = 'text';
+                icon.innerText = 'visibility_off';
+            } else {
+                pwdInput.type = 'password';
+                icon.innerText = 'visibility';
+            }
+        });
+
+        // Hover effect for the brand side panel elements
+        const brandCards = document.querySelectorAll('.bg-white\\/5');
+        brandCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                card.style.transform = 'translateY(-2px)';
+                card.style.transition = 'all 0.3s ease';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Backend Integration
+        const API_URL = 'http://localhost:5000/api';
+
+        function togglePasswordVisibility() {
+            const passInput = document.getElementById('password');
+            const passIcon = document.getElementById('passVisibilityIcon');
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                passIcon.innerText = 'visibility_off';
+            } else {
+                passInput.type = 'password';
+                passIcon.innerText = 'visibility';
+            }
+        }
+
+        async function handleSignupSubmit(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('full_name').value;
+            const nameParts = fullName.trim().split(' ');
+            const firstName = nameParts[0] || '';
+            const lastName = nameParts.slice(1).join(' ') || '';
+            
+            const email = document.getElementById('email').value;
+            const department = document.getElementById('department').value;
+            const position = document.getElementById('designation').value;
+            const password = document.getElementById('password').value;
+            const terms = document.getElementById('terms').checked;
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            
+            // Validation
+            if (!fullName || !email || !department || !position || !password) {
+                alert('Please fill all fields');
+                return;
+            }
+            
+            if (!terms) {
+                alert('Please agree to Terms of Service and Privacy Policy');
+                return;
+            }
+            
+            try {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Signing up...';
+                
+                const response = await fetch(`${API_URL}/employee/signup`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        first_name: firstName,
+                        last_name: lastName,
+                        email: email,
+                        password: password,
+                        department: department,
+                        position: position
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    alert(data.message + '\nPlease wait for admin approval.');
+                    window.location.href = '/check_your_email/code.html';
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Connection error. Ensure backend is running on localhost:5000');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Sign Up<span class="material-symbols-outlined">arrow_forward</span>';
+            }
+        }
+
+        // Attach form submission
+        const signupForm = document.getElementById('signupForm');
+        if (signupForm) {
+            signupForm.addEventListener('submit', handleSignupSubmit);
+        }
+    </script>
+
+
+</body></html>
